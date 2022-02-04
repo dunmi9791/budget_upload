@@ -34,7 +34,7 @@ class ImportBudgetLineWizard(models.TransientModel):
         number_of_rows = sheet.nrows
         row = 1
         while(row < number_of_rows):
-            general_budget_id = self.env['budget.post'].search([('name','=',sheet.cell(row,0).value)])
+            general_budget_id = self.env['account.analytic.budget.post'].search([('name','=',sheet.cell(row,0).value)])
             if not general_budget_id:
                 raise ValidationError('Budgetory Position not found for Budgetory Position :%s at row number %s '%(sheet.cell(row,0).value,row+1))
             analytic_account_id = self.env['account.analytic.account'].search([('code','=',sheet.cell(row,1).value)])
