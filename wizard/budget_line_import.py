@@ -63,6 +63,6 @@ class ImportBudgetLineWizard(models.TransientModel):
                 'date_to' : date_to,
                 'planned_amount': planned_amount,
                 }
-            self.env['account.analytic.crossovered.budget.lines'].create(vals)
+            self.env['crossovered.budget.lines'].create(vals)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4: 
