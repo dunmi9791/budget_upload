@@ -40,11 +40,11 @@ class ExportBudgetSheet(models.TransientModel):
         name = budget_id.name
         sheet.write_merge(0, 1, 0, 6, name, title_style_comp_left)
 
-        user_id = budget_id.creating_user_id
+        user_id = budget_id.create_uid
         date_start = budget_id.date_from
         date_end = budget_id.date_to
         comp_id = budget_id.company_id
-        currency_id = budget_id.currency_id
+        currency_id = budget_id.crossovered_budget_line.currency_id
         sheet.write(3, 0, 'Responsible',title_style1_table_head1)
         sheet.write(4, 0, user_id.name, title_style1_table_data_sub)
         sheet.write(3, 1, 'Date From',title_style1_table_head1)
