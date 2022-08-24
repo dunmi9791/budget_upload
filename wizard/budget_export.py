@@ -44,7 +44,7 @@ class ExportBudgetSheet(models.TransientModel):
         date_start = budget_id.date_from
         date_end = budget_id.date_to
         comp_id = budget_id.company_id
-        currency_id = budget_id.crossovered_budget_line.currency_id
+        currency_id = budget_id.company_id.currency_id
         sheet.write(3, 0, 'Responsible',title_style1_table_head1)
         sheet.write(4, 0, user_id.name, title_style1_table_data_sub)
         sheet.write(3, 1, 'Date From',title_style1_table_head1)
