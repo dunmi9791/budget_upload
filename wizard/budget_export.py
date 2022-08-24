@@ -62,9 +62,9 @@ class ExportBudgetSheet(models.TransientModel):
         sheet.write(8, 2, 'Start Date',title_style1_table_head)
         sheet.write(8, 3, 'End Date',title_style1_table_head)
         sheet.write(8, 4, 'Paid Date',title_style1_table_head)
-        sheet.write(8, 5, 'Planned Amount',title_style1_table_head)
-        sheet.write(8, 6, 'Practical Amount',title_style1_table_head)
-        sheet.write(8, 7, 'Theoratical Amount',title_style1_table_head)
+        sheet.write(8, 5, 'Budgeted Amount',title_style1_table_head)
+        sheet.write(8, 6, 'Released Amount',title_style1_table_head)
+        sheet.write(8, 7, 'Actual Amount',title_style1_table_head)
         sheet.write(8, 8, 'Achievement',title_style1_table_head)
         
         roww = 9
@@ -89,13 +89,13 @@ class ExportBudgetSheet(models.TransientModel):
             sheet.write(row_data, 5, currency_id.symbol+str(line.planned_amount) , title_style1_table_data_sub)
             column = sheet.col(6)
             column.width = 200 * 25
-            sheet.write(row_data, 6, currency_id.symbol+str(line.practical_amount), title_style1_table_data_sub)
+            sheet.write(row_data, 6, currency_id.symbol+str(line.released_amount), title_style1_table_data_sub)
             column = sheet.col(7)
             column.width = 200 * 25
-            sheet.write(row_data, 7, currency_id.symbol+str(line.theoritical_amount), title_style1_table_data_sub)
+            sheet.write(row_data, 7, currency_id.symbol+str(line.actual_amount), title_style1_table_data_sub)
             column = sheet.col(8)
             column.width = 200 * 25
-            sheet.write(row_data, 8, currency_id.symbol+str(line.percentage), title_style1_table_data_sub)
+            sheet.write(row_data, 8, str(line.percentage)+'%', title_style1_table_data_sub)
 
             row_data = row_data + 1
         roww = row_data + 3
