@@ -25,7 +25,7 @@ export budget
     'images': ['static/description/img1.jpg'],
     #'live_test_url': 'https://youtu.be/KHHgKKKDnso',
     'external_dependencies': {'python': ['xlrd']},
-	'depends': ['om_account_budget'],
+	'depends': ['base_account_budget'],
 	'data': [
 	    'wizard/budget_line_import.xml',
 	    'wizard/budget_export.xml',

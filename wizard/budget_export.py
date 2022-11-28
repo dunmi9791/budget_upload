@@ -15,10 +15,10 @@ from dateutil.relativedelta import relativedelta
 class ExportBudgetSheet(models.TransientModel):
     _name = 'export.budget.sheet.wizard'
 
-    @api.multi
+    # @api.multi
     def print_budget_sheet_excel(self):
         active_id = self._context.get('active_id')
-        budget_id = self.env['crossovered.budget'].browse(active_id)
+        budget_id = self.env['budget.budget'].browse(active_id)
         workbook = xlwt.Workbook()
         title_style_comp = xlwt.easyxf('align: horiz center ; font: name Times New Roman,bold off, italic off, height 450')
         title_style_comp_left = xlwt.easyxf('align: horiz left ; font: name Times New Roman,bold off, italic off, height 450')

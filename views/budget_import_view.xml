@@ -4,8 +4,8 @@
         
         <record model="ir.ui.view" id="analytic_crossovered_budget_view_id_inherit">
             <field name="name">account.analytic.crossovered.budget.form.inherit</field>
-            <field name="model">crossovered.budget</field>
-            <field name="inherit_id" ref="om_account_budget.crossovered_budget_view_form"/>
+            <field name="model">budget.budget</field>
+            <field name="inherit_id" ref="base_account_budget.crossovered_budget_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_budget_confirm']" position="after">
                     <button name="%(budget_line_import_wizard_action)d" type="action" string="Import Budget Lines" class="btn-primary" attrs="{'invisible':[('state','in',['validate','cancel','done'])]}"/>

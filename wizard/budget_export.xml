@@ -5,7 +5,7 @@
            <field name="model">export.budget.sheet.wizard</field>
            <field name="arch" type="xml">
                <form string="export wizard">
-                <label for="for_genral" string="This wizard will Export Budgets in Excel Format."/>
+<!--                <label for="for_general" string="This wizard will Export Budgets in Excel Format."/>-->
                    <footer>
                         <button name="print_budget_sheet_excel" type="object" string="Excel Export" class="btn-primary"/>
                         or

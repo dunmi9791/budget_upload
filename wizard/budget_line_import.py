@@ -19,10 +19,10 @@ class ImportBudgetLineWizard(models.TransientModel):
         string = 'Import File Name'
     )
 
-    @api.multi
+    # @api.multi
     def budget_file(self):
         active_id = self._context.get('active_id')
-        budget_id = self.env['crossovered.budget'].browse(active_id)
+        budget_id = self.env['budget.budget'].browse(active_id)
         try:
             workbook = xlrd.open_workbook(file_contents = base64.decodestring(self.files))
         except:
@@ -63,6 +63,6 @@ class ImportBudgetLineWizard(models.TransientModel):
                 'date_to' : date_to,
                 'planned_amount': planned_amount,
                 }
-            self.env['crossovered.budget.lines'].create(vals)
+            self.env['budget.lines'].create(vals)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4: 
